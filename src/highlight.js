@@ -660,9 +660,10 @@ https://highlightjs.org/
 
   /*
   Applies highlighting to all <pre><code>..</code></pre> blocks on a page.
+  Only applies highlighting once if turbolinks is not present
   */
   function initHighlighting() {
-    if (initHighlighting.called)
+    if ((typeof Turbolinks === 'undefined') && initHighlighting.called)
       return;
     initHighlighting.called = true;
 
@@ -671,9 +672,14 @@ https://highlightjs.org/
   }
 
   /*
-  Attaches highlighting to the page load event.
+  Attaches highlighting to the page load event, and also to
+  turbolinks:render and turbolinks:load events. To learn
+  more about turbolinks events, please take a look at
+  https://github.com/turbolinks/turbolinks#full-list-of-events
   */
   function initHighlightingOnLoad() {
+    addEventListener("turbolinks:load", initHighlighting, false);
+    addEventListener("turbolinks:render", initHighlighting, false);
     addEventListener('DOMContentLoaded', initHighlighting, false);
     addEventListener('load', initHighlighting, false);
   }

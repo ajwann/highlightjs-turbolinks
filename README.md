@@ -1,11 +1,41 @@
-# Highlight.js
+# Highlight.js for Turbolinks 5
 
-[![Build Status](https://travis-ci.org/isagalaev/highlight.js.svg?branch=master)](https://travis-ci.org/isagalaev/highlight.js)
+This is a fork of [Highlight.js](www.npmjs.com/package/highlight.js),
+which is compatible with Turbolinks 5.
 
-Highlight.js is a syntax highlighter written in JavaScript. It works in
-the browser as well as on the server. It works with pretty much any
-markup, doesn’t depend on any framework and has automatic language
-detection.
+To make highlight.js compatible with Turbolinks 5, two event
+listeners have been added to ```initHighlightingOnLoad```, the
+```'turbolinks:load'``` and ```'turbolinks:render'``` listeners.
+
+The original event listeners used by ```initHighlightingOnLoad```
+have been left in place. They are ```'DOMContentLoaded'```
+and ```'load'```. This allows ```highlight-js-turbolinks```
+to be compatible with applications that use turbolinks,
+and also compatable with applications that do not. This is
+done so that if you ever choose to disable or remove turbolinks
+from your application, you may continue to use ```highlight-js-turbolinks```.
+
+## Installing with Yarn and Rails
+
+### For Rails 5
+
+Coming soon!
+
+### For Rails 5.1 and up
+
+From your Rails root, run
+```
+yarn add highlight-js-turbolinks
+```
+Then add the following line to ```app/assets/javascripts/application.js```
+```
+//= require highlight-js-turbolinks/lib/highlight.js
+```
+Then add the following line to ```app/assets/stylesheets/application.scss```
+```
+@import 'highlight-js-turbolinks/styles/default.css'
+```
+
 
 ## Getting Started
 
@@ -93,36 +123,6 @@ onmessage = function(event) {
   var result = self.hljs.highlightAuto(event.data);
   postMessage(result.value);
 }
-```
-
-
-## Getting the Library
-
-You can get highlight.js as a hosted, or custom-build, browser script or
-as a server module. Right out of the box the browser script supports
-both AMD and CommonJS, so if you wish you can use RequireJS or
-Browserify without having to build from source. The server module also
-works perfectly fine with Browserify, but there is the option to use a
-build specific to browsers rather than something meant for a server.
-Head over to the [download page][5] for all the options.
-
-**Don't link to GitHub directly.** The library is not supposed to work straight
-from the source, it requires building. If none of the pre-packaged options
-work for you refer to the [building documentation][6].
-
-**The CDN-hosted package doesn't have all the languages.** Otherwise it'd be
-too big. If you don't see the language you need in the ["Common" section][5],
-it can be added manually:
-
-```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
-```
-
-**On Almond.** You need to use the optimizer to give the module a name. For
-example:
-
-```
-r.js -o name=hljs paths.hljs=/path/to/highlight out=highlight.js
 ```
 
 

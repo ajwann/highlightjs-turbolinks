@@ -1,3 +1,14 @@
+## Version 1.0.1
+
+Updated readme with fork-specific description
+and basic install steps for Rails 5.1 and greater
+
+## Version 1.0.0
+
+Added event listeners for Turbolinks 5
+
+# From the original Highlight.js:
+
 ## Version 9.12.0
 
 New language:

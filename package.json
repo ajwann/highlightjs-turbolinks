@@ -1,24 +1,26 @@
 {
-  "name": "highlight.js",
-  "description": "Syntax highlighting with language autodetection.",
+  "name": "highlight-js-turbolinks",
+  "description": "Turbolinks compatible syntax highlighting with language autodetection.",
   "keywords": [
+    "rails",
+    "turbolinks",
     "highlight",
     "syntax"
   ],
-  "homepage": "https://highlightjs.org/",
-  "version": "9.12.0",
+  "homepage": "",
+  "version": "1.0.1",
   "author": {
-    "name": "Ivan Sagalaev",
-    "email": "maniac@softwaremaniacs.org"
+    "name": "Adam Wanninger",
+    "email": "npm.user.ajwann@protonmail.com"
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/isagalaev/highlight.js/issues"
+    "url": "https://github.com/ajwann/highlight-js-turbolinks/issues"
   },
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git://github.com/isagalaev/highlight.js.git"
+    "url": "git://github.com/ajwann/highlight-js-turbolinks.git"
   },
   "main": "./lib/index.js",
   "scripts": {
