@@ -26,11 +26,11 @@ Coming soon!
 
 From your Rails root, run
 ```
-yarn add highlight-js-turbolinks
+yarn add highlightjs-turbolinks
 ```
 Then add the following line to ```app/assets/javascripts/application.js```
 ```
-//= require highlight-js-turbolinks/lib/highlight.js
+//= require highlightjs-turbolinks/lib/highlightjs-turbolinks.js
 ```
 Then add the following line to ```app/assets/stylesheets/application.scss```
 ```
