@@ -8,7 +8,7 @@ let glob     = bluebird.promisify(require('glob'));
 describe('plain browser', function() {
   before(function() {
     // Will match both `highlight.pack.js` and `highlight.min.js`
-    const filepath = utility.buildPath('..', 'build', 'highlight.*.js');
+    const filepath = utility.buildPath('..', 'build', 'highlightjs-turbolinks.*.js');
 
     return glob(filepath)
       .then(hljsPath => jsdomEnv(this.html, hljsPath))

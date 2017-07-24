@@ -40,7 +40,7 @@ function buildLanguages() {
 }
 
 function buildCore() {
-  const input  = path.join(directory.root, 'src', 'highlight.js'),
+  const input  = path.join(directory.root, 'src', 'highlightjs-turbolinks.js'),
         output = path.join(directory.build, 'lib');
 
   return {
@@ -56,7 +56,7 @@ function buildIndex() {
       output = path.join(directory.build, 'lib', 'index.js'),
 
       templateArgs = {
-        template: [ 'var hljs = require(\'./highlight\');\n'
+        template: [ 'var hljs = require(\'./highlightjs-turbolinks\');\n'
                   , '<% _.each(names, function(name) { %>' +
                     'hljs.registerLanguage(\'<%= name %>\', ' +
                     'require(\'./languages/<%= name %>\'));'

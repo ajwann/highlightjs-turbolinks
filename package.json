@@ -1,5 +1,5 @@
 {
-  "name": "highlight-js-turbolinks",
+  "name": "highlightjs-turbolinks",
   "description": "Turbolinks compatible syntax highlighting with language autodetection.",
   "keywords": [
     "rails",
@@ -8,19 +8,19 @@
     "syntax"
   ],
   "homepage": "",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": {
     "name": "Adam Wanninger",
     "email": "npm.user.ajwann@protonmail.com"
   },
   "contributors": [],
   "bugs": {
-    "url": "https://github.com/ajwann/highlight-js-turbolinks/issues"
+    "url": "https://github.com/ajwann/highlightjs-turbolinks/issues"
   },
   "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ajwann/highlight-js-turbolinks.git"
+    "url": "git://github.com/ajwann/highlightjs-turbolinks.git"
   },
   "main": "./lib/index.js",
   "scripts": {

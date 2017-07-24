@@ -678,8 +678,8 @@ https://highlightjs.org/
   https://github.com/turbolinks/turbolinks#full-list-of-events
   */
   function initHighlightingOnLoad() {
-    addEventListener("turbolinks:load", initHighlighting, false);
-    addEventListener("turbolinks:render", initHighlighting, false);
+    addEventListener('turbolinks:load', initHighlighting, false);
+    addEventListener('turbolinks:render', initHighlighting, false);
     addEventListener('DOMContentLoaded', initHighlighting, false);
     addEventListener('load', initHighlighting, false);
   }

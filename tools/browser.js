@@ -90,7 +90,7 @@ module.exports = function(commander, dir) {
       regex             = utility.regex,
       replaceClassNames = utility.replaceClassNames,
 
-      coreFile     = path.join('src', 'highlight.js'),
+      coreFile     = path.join('src', 'highlightjs-turbolinks.js'),
       languages    = utility.glob(path.join('src', 'languages', '*.js')),
       filterCB     = utility.buildFilterCallback(commander.args),
       replaceArgs  = replace(regex.header, ''),
@@ -98,7 +98,7 @@ module.exports = function(commander, dir) {
         'hljs.registerLanguage(\'<%= name %>\', <%= content %>);\n';
 
   tasks = {
-    startLog: { task: ['log', 'Building highlight.js pack file.'] },
+    startLog: { task: ['log', 'Building highlightjs-turbolinks pack file.'] },
     readCore: { requires: 'startLog', task: ['read', coreFile] },
     read: { requires: 'startLog', task: ['glob', languages] },
     filter: { requires: 'read', task: ['filter', filterCB] },
@@ -115,7 +115,7 @@ module.exports = function(commander, dir) {
   if(commander.compress || commander.target === 'cdn') {
     tasks.compresslog = {
       requires: requiresTask,
-      task: ['log', 'Compressing highlight.js pack file.']
+      task: ['log', 'Compressing highlightjs-turbolinks pack file.']
     };
 
     tasks.replace2 = {
@@ -141,11 +141,11 @@ module.exports = function(commander, dir) {
 
   tasks.writelog = {
     requires: 'insertLicenseTag',
-    task: ['log', 'Writing highlight.js pack file.']
+    task: ['log', 'Writing highlightjs-turbolinks pack file.']
   };
 
   hljsExt = commander.target === 'cdn' ? 'min' : 'pack';
-  output  = path.join(directory.build, `highlight.${hljsExt}.js`);
+  output  = path.join(directory.build, `highlightjs-turbolinks.${hljsExt}.js`);
 
   tasks.write = {
     requires: 'writelog',
