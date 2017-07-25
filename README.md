@@ -9,8 +9,8 @@ listeners have been added to ```initHighlightingOnLoad```, the
 ```'turbolinks:load'``` and ```'turbolinks:render'``` listeners.
 
 The original event listeners used by ```initHighlightingOnLoad```
-have been left in place. They are ```'DOMContentLoaded'```
-and ```'load'```. This allows ```highlight-js-turbolinks```
+have been left in place. They listen for the ```DOMContentLoaded'```
+and ```load``` events. This allows ```highlight-js-turbolinks```
 to be compatible with applications that use turbolinks,
 and also compatable with applications that do not. This is
 done so that if you ever choose to disable or remove turbolinks
