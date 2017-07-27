@@ -4,17 +4,17 @@
 
 This is a [Turbolinks 5](https://github.com/turbolinks/turbolinks) compatible fork of [Highlight.js](https://github.com/isagalaev/highlight.js), and is up to date with v9.12.0.
 
-To make highlight.js compatible with Turbolinks 5, two event
-listeners have been added to ```initHighlightingOnLoad```, the
-```'turbolinks:load'``` and ```'turbolinks:render'``` listeners.
+To make Highlight.js compatible with Turbolinks 5, two event
+listeners have been added to ```initHighlightingOnLoad```, which
+listen for the ```turbolinks:load``` and ```turbolinks:render``` events.
 
 The original event listeners used by ```initHighlightingOnLoad```
-have been left in place. They listen for the ```DOMContentLoaded'```
+have been left in place. They listen for the ```DOMContentLoaded```
 and ```load``` events. This allows ```highlight-js-turbolinks```
 to be compatible with applications that use turbolinks,
-and also compatable with applications that do not. This is
-done so that if you ever choose to disable or remove turbolinks
-from your application, you may continue to use ```highlightjs-turbolinks```.
+and also compatable with applications that do not. Therefore
+if you ever choose to disable or remove turbolinks from
+your application, you may continue to use ```highlightjs-turbolinks```.
 
 ## Installing with Yarn and Rails
 
