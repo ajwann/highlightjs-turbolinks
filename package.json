@@ -5,10 +5,11 @@
     "rails",
     "turbolinks",
     "highlight",
+    "highlight.js",
     "syntax"
   ],
   "homepage": "",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Adam Wanninger",
     "email": "npm.user.ajwann@protonmail.com"
