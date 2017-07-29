@@ -32,9 +32,9 @@ Then add the following line to ```app/assets/javascripts/application.js```
 ```
 //= require highlightjs-turbolinks/lib/highlightjs-turbolinks.js
 ```
-Then add the following line to ```app/assets/stylesheets/application.scss```
+Then add the following line to ```app/assets/stylesheets/application.css```
 ```
-@import 'highlight-js-turbolinks/styles/default.css'
+*= require highlightjs-turbolinks/styles/default.css
 ```
 
 ## License
