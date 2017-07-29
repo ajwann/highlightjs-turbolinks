@@ -6,6 +6,7 @@ env:
   -
   - BROWSER=1
   - BROWSER=1 NOCOMPRESS=1
+
 script:
   - |
     export BUILD_PARAMS=""
@@ -28,3 +29,15 @@ script:
       npm run test
     fi
 sudo: false  # Use container-based architecture
+
+before_deploy:
+  - node tools/build.js -t node
+  - cd build
+
+deploy:
+  provider: npm
+  email: "npm.user.ajwann@protonmail.com"
+  api_key:
+    secure: "RN6aaEktd5mQclabsxfy2Lq/jDtXcS+GKyMTx8UyxYIDgwy2eiswWi9TpjjMqjXP7YrEbkMS/4WKmRZcTAi/oNs0mf/npLEEUHvpgXVLG5E4KeB8OJhKIUQFPKEUc2rrNxmTVE3LP4zR9py7xmz7ODAfRGbcKP9S7s8JQBjdv8MkJZBiCARjc1A0hIGY5bJSP/s+2hcMv1WKGkvGWvb/PDjSbgZneRPN2p7oR5FJK2Yypav5Au6iy7toT2bmPpc3jvY0YCmdcsnpZAB0x3gtNTqx9OlV8uRSZgJNe85+YR5m5bysHoN4/W/hFBvbtTe8EX72XxlE8w6bwh4SAOOj7Wzim5zMdalt8t3MAETHU8y3DewGlItimFUGZk9lS+QNfgkc2OUHJcTF9dtUk7nXTG4iPcoK8VDQvlbkslyAJroXke+P0z6HMxw34sCcHA3CnL2nzoBuDuAioO7xHwZAkwrdamMt7MCKcxGTgcihbPNDolOsN+QMGsrah8i47z90qnP64UooM2YCYebN//LcmHced/o1hh+tXymfu/4ZmqOcJTIUDr2tS5+fWecoM8GQMX7BpSr1aHNqBe5HFhtSPYgbB6Abg+EvdUAwXpjA/m3rg3m6PhN+dPknyuQ/ez/FjMYqKFy6gD4jD23D1yHDxLtLrg5R0qhO5tgfu1xOx48="
+  on:
+    tags: true
